@@ -4,9 +4,9 @@ const api = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/",
 });
 
-export const getUsers = () => api.get("/users").then((res) => res.data);
+export const getUsers = () => api.get("/posts").then((res) => res.data);
 
-export const getUser = (id) => api.get(`/users/${id}`).then((res) => res.data);
+export const getUser = (id) => api.get(`/posts/${id}`).then((res) => res.data);
 
 export const updateUser = ({ id, ...updatedUser }) =>
-  api.put(`/users/${id}`, updatedUser).then((res) => res.data);
+  api.put(`/put/${id}`, updatedUser).then((res) => res.data);

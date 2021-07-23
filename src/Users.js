@@ -3,7 +3,7 @@ import Loader from "react-loader-spinner";
 import { useQuery } from "react-query";
 import * as api from "./usersApi";
 
-const Users = () => {
+const Users = ({ setUserId }) => {
   const { data, isLoading, isError } = useQuery("users", api.getUsers);
 
   if (isLoading) {
@@ -23,13 +23,14 @@ const Users = () => {
   }
 
   return (
-    <div>
       <ul>
         {data?.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            {user.title}
+            <button onClick={() => setUserId(user.id)}>View</button>
+          </li>
         ))}
       </ul>
-    </div>
   );
 };
 
