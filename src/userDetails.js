@@ -43,8 +43,8 @@ const UserDetails = ({ userId }) => {
         <UserForm user={user} setIsEditing={setIsEditing}/>
       ) : (
         <div>
-          <h2>{user.title}</h2>
-          <p>{user.body}</p>
+          <h2>{user.name}</h2>
+          <p>{user.job}</p>
         </div>
       )}
     </div>
