@@ -26,7 +26,7 @@ const Users = ({ setUserId }) => {
       <ul>
         {data?.map((user) => (
           <li key={user.id}>
-            {user.title}
+            {user.name}
             <button onClick={() => setUserId(user.id)}>View</button>
           </li>
         ))}
