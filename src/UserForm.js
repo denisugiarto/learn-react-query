@@ -20,7 +20,7 @@ const UserForm = ({ user, setIsEditing }) => {
   };
 
   const handleSubmit = (event) => {
-    event.prefentDefault();
+    event.preventDefault();
 
     mutate(fields);
   };
@@ -33,21 +33,21 @@ const UserForm = ({ user, setIsEditing }) => {
     <div style={{ paddingTop: 20 }}>
       <form onSubmit={handleSubmit}>
         <label>
-          Title:{" "}
+          Name:{" "}
           <input
-            name="title"
+            name="name"
             type="text"
-            value={fields.title}
+            value={fields.name}
             onChange={handleChange}
           />
         </label>
 
         <label>
-          Body:{" "}
+          Job:{" "}
           <input
-            name="body"
+            name="job"
             type="text"
-            value={fields.body}
+            value={fields.job}
             onChange={handleChange}
           />
         </label>
